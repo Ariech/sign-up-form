@@ -1,11 +1,79 @@
-@font-face {
-  font-family: "Norse Bold";
-  src: url("./Norse-Bold.otf");
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  color: white;
+}
+
+@font-face {
+  font-family: "Norse Bold";
+  src: url("./Norse-Bold.otf");
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Left side */
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 40%;
+
+  background-image: url(./images/dayso-GysN_Afm25A-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 40vh;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1em 0 0.1em 0;
+  position: relative;
+  top: 3vh;
+
+  background-color: rgba(0, 0, 0, 0.45);
+  font-family: "Norse Bold";
+  font-size: 4em;
+}
+
+.logo img {
+  height: 75px;
+}
+
+.credit {
+  text-align: end;
+  text-transform: uppercase;
+  padding: 0 1em 1em 0;
+  font-size: 0.7em;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.credit a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 750px) {
+  .wrapper {
+    flex-direction: row;
+  }
+
+  .credit {
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    text-align: end;
+  }
+
+  .logo {
+    top: 5vh;
+    background: none;
+  }
 }
