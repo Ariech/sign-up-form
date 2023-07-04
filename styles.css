@@ -1,9 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300&display=swap");
+
+:root {
+  --black: #000;
+  --light-gray: #b9b9b9;
+  --white: #fff;
+  --neon-pink: #e6007e;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
-  color: white;
+  color: var(--light-gray);
 }
 
 @font-face {
@@ -61,10 +74,158 @@
   text-decoration: none;
 }
 
+/* Right side */
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 60%;
+  background-color: var(--black);
+  row-gap: 4em;
+}
+
+.dummy-text,
+.log-in {
+  padding: 0 2em;
+}
+
+.dummy-text {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 2em;
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+.dummy-text > p {
+  font-size: 1.15em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  background-color: rgb(6, 6, 6);
+  padding: 20px 2em;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1em;
+  row-gap: 1em;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.form-wrapper h2 {
+  flex-basis: 80%;
+}
+
+.form-wrapper > p {
+  flex-basis: 100%;
+  color: var(--neon-pink);
+}
+
+.form-row {
+  flex-basis: 80%;
+}
+
+.form-row label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  min-width: 165px;
+}
+
+.form-row input {
+  background-color: rgb(2, 2, 2);
+  border: 1px solid var(--light-gray);
+  padding: 7px;
+  border-radius: 3px;
+}
+
+.form-row input:required {
+  border: 2px solid var(--neon-pink);
+}
+
+.form-row input + span {
+  position: relative;
+}
+
+.form-row input + span::before {
+  position: absolute;
+  right: 10px;
+  top: 1px;
+}
+
+input:invalid + span::before {
+  content: "✖";
+  color: red;
+  font-weight: bold;
+}
+
+input:valid + span::before {
+  content: "✓";
+  color: green;
+  font-weight: bold;
+}
+
+.form-row input:valid {
+  border: 2px solid lightgreen;
+}
+
+.form-row input:focus {
+  outline: none;
+  border: 2px solid var(--light-gray);
+}
+
+form > button {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0);
+  border: 3px solid var(--neon-pink);
+  border-radius: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.05em;
+  color: var(--neon-pink);
+  text-align: center;
+  cursor: pointer;
+}
+
+form > button:hover {
+  color: var(--black);
+  background-color: var(--neon-pink);
+}
+
+.dummy-text > p > em,
+.log-in > p > a,
+.form-row > label > span,
+.form-row + p {
+  color: var(--neon-pink);
+  font-weight: bold;
+}
+
+.log-in {
+  margin-bottom: 1em;
+}
+
+.log-in > p > a {
+  text-decoration: none;
+}
+
 @media only screen and (min-width: 750px) {
   .wrapper {
     flex-direction: row;
   }
+
+  /* Left section */
 
   .credit {
     font-size: 0.8em;
@@ -75,5 +236,44 @@
   .logo {
     top: 5vh;
     background: none;
+  }
+
+  /* Right section */
+
+  .right {
+    align-items: flex-start;
+  }
+
+  .dummy-text,
+  form,
+  .log-in {
+    padding: 0 4em;
+  }
+
+  form {
+    padding: 20px 4em;
+    box-shadow: 0 20px 20px 0 rgb(22, 22, 22);
+  }
+
+  .dummy-text > p {
+    font-size: 1.5em;
+    text-align: left;
+  }
+
+  form {
+    align-items: flex-start;
+  }
+
+  .form-wrapper {
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .form-row {
+    flex-basis: 40%;
+  }
+
+  .form-row > input {
+    width: 100%;
   }
 }
