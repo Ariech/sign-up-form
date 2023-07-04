@@ -5,6 +5,7 @@
   --light-gray: #b9b9b9;
   --white: #fff;
   --neon-pink: #e6007e;
+  --light-green: #90ee90;
 }
 
 body {
@@ -167,18 +168,18 @@ form {
 
 input:invalid + span::before {
   content: "✖";
-  color: red;
+  color: var(--neon-pink);
   font-weight: bold;
 }
 
 input:valid + span::before {
   content: "✓";
-  color: green;
+  color: var(--light-green);
   font-weight: bold;
 }
 
 .form-row input:valid {
-  border: 2px solid lightgreen;
+  border: 2px solid var(--light-green);
 }
 
 .form-row input:focus {
