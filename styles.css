@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300&display=swap");
-
+@font-face {
+  font-family: "Norse Bold";
+  src: url("./Norse-Bold.otf");
+}
 :root {
   --black: #000;
   --light-gray: #b9b9b9;
@@ -18,11 +21,6 @@ body {
   padding: 0;
   box-sizing: border-box;
   color: var(--light-gray);
-}
-
-@font-face {
-  font-family: "Norse Bold";
-  src: url("./Norse-Bold.otf");
 }
 
 .wrapper {
@@ -176,6 +174,13 @@ input:valid + span::before {
   content: "✓";
   color: var(--light-green);
   font-weight: bold;
+}
+
+.error {
+  font-weight: bold;
+  color: var(--neon-pink);
+  position: relative;
+  top: 10px;
 }
 
 .form-row input:valid {
